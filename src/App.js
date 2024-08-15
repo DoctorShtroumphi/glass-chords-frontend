@@ -5,11 +5,15 @@ import { Container, Navbar, Nav, Button } from 'react-bootstrap';
 import ChordGenerator from './components/ChordGenerator';
 import ConsentPage from './components/ConsentPage';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import ExplanationPanel from './components/ExplanationPanel';
 
 const App = () => {
   const [chordData, setChordData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [consentGiven, setConsentGiven] = useState(false);
+
+  const [panelsVisible, setPanelsVisible] = useState(false);
+  const [activePanel, setActivePanel] = useState(null);
 
   const handleConsent = () => {
     setConsentGiven(true)
@@ -59,9 +63,18 @@ const App = () => {
             element={
               consentGiven ? (
                 <>
-                  <h1>Chord Generator</h1>
-                  <p>Click on the grid to input notes for chords.</p>
-                  <ChordGenerator chordData={chordData} />
+                  <ExplanationPanel 
+                    panelsVisible={panelsVisible}
+                    activePanel={activePanel} 
+                  />
+                  <h1>GlassChords Generator</h1>
+                  <ChordGenerator 
+                    chordData={chordData} 
+                    panelsVisible={panelsVisible}
+                    setPanelsVisible={setPanelsVisible}
+                    activePanel={activePanel}
+                    setActivePanel={setActivePanel}
+                  />
                   <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px', marginBottom: '35px' }}>
                     <Button 
                       variant="secondary" 

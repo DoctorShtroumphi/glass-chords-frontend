@@ -6,12 +6,10 @@ import * as Tone from 'tone';
 import KeySelectionPanel from './KeySelectionPanel';
 import GenerationOutputArea from './GenerationOutputArea';
 
-const ChordGenerator = ({ chordData }) => {
-  const [panelsVisible, setPanelsVisible] = useState(false);
+const ChordGenerator = ({ chordData, panelsVisible, setPanelsVisible, activePanel, setActivePanel }) => {
   const [trainingLevel, setTrainingLevel] = useState('Fully Trained');
-  const [temperature, setTemperature] = useState(1.0); // Default to 1.0 (neutral temperature)
-  const [keyAwareLossEnabled, setKeyAwareLossEnabled] = useState(true); // Default to true
-  const [activePanel, setActivePanel] = useState(null); // State to track which panel is open
+  const [temperature, setTemperature] = useState(1.0);
+  const [keyAwareLossEnabled, setKeyAwareLossEnabled] = useState(true);
   const [selectedKey, setSelectedKey] = useState(121);
   const selectedKeyNotes = chordData.key_to_notes[selectedKey];
   const [showRedHues, setShowRedHues] = useState(false);
