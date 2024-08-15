@@ -94,7 +94,7 @@ const GenerateButton = ({ selectedKey, trainingLevel, temperature, keyAwareLossE
         Temperature: ${temperature}
         Key Aware Loss: ${keyAwareLossEnabled}`);
 
-      const response = await axios.post('http://localhost:5000/generate_chords', {
+      const response = await axios.post('https://glass-chords-backend-ddebb2ffdbec.herokuapp.com/generate_chords', {
         key: key,
         chords: tokens,
         model_type: modelType,

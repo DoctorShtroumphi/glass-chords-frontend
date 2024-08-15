@@ -22,7 +22,7 @@ const App = () => {
     // Fetch the chord data from the backend API
     const fetchChordData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/chord_data');
+        const response = await axios.get('https://glass-chords-backend-ddebb2ffdbec.herokuapp.com/chord_data');
         setChordData(response.data);
         setLoading(false);
       } catch (error) {
