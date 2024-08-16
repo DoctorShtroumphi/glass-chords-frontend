@@ -92,7 +92,7 @@ const GenerateButton = ({ selectedKey, trainingLevel, temperature, keyAwareLossE
       console.log(`Generating melody with the following settings:
         Training Level: ${trainingLevel}
         Temperature: ${temperature}
-        Key Aware Loss: ${keyAwareLossEnabled}`);
+        Key-Aware Loss: ${keyAwareLossEnabled}`);
 
       const response = await axios.post('https://glass-chords-backend-ddebb2ffdbec.herokuapp.com/generate_chords', {
         key: key,

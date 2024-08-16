@@ -12,9 +12,7 @@ const ControllableElementPanels = ({ trainingLevel, setTrainingLevel, temperatur
         }}
       >
         <h2 style={styles.overlayText}>
-          🚧 Caution: Do Not Touch! 
-          <br />
-          (Yet 😉)
+          🚧 Caution: Do Not Touch!
         </h2>
       </div>
 
@@ -55,7 +53,7 @@ const ControllableElementPanels = ({ trainingLevel, setTrainingLevel, temperatur
           )}
         </div>
         <div style={styles.panel} onClick={() => handlePanelClick('keyAwareLoss')}>
-          <span>Key Aware Loss</span>
+          <span>Key-Aware Loss</span>
           {activePanel === 'keyAwareLoss' && (
             <div style={styles.controlElement} onClick={(e) => e.stopPropagation()}>
               <input

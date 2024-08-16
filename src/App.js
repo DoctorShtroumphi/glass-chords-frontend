@@ -63,11 +63,14 @@ const App = () => {
             element={
               consentGiven ? (
                 <>
+                <h1>Explanation</h1>
                   <ExplanationPanel 
                     panelsVisible={panelsVisible}
                     activePanel={activePanel} 
                   />
-                  <h1>GlassChords Generator</h1>
+                  <br />
+                  <h1>Chord Generator</h1>
+                  <p>Click on the grid to input notes for chords.</p>
                   <ChordGenerator 
                     chordData={chordData} 
                     panelsVisible={panelsVisible}
